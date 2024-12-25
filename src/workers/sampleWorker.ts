@@ -14,8 +14,7 @@ export default function SampleWorker(queueName: string){
             }
         },
         {
-            connection: redisConnection   
-         
+            connection: redisConnection
         }
     );
 }
@@ -40,4 +39,5 @@ The SampleJob class is responsible for the actual business logic of the job (e.g
 
 
 the use of the SampleJob instance in your code reflects principles of Single Responsibility Principle (SRP) and Separation of Concerns
+because this file is all about to just picking a job from the queue only not to process a job too i.e (SRP).
 */
