@@ -3,6 +3,7 @@ import { BullMQAdapter } from "@bull-board/api/bullMQAdapter";
 import { ExpressAdapter } from "@bull-board/express";
 
 import sampleQueue from "../queues/sampleQueue";
+import submissionQueue from "../queues/submissionQueue";
 // import submissionQueue from "../queues/submissionQueue";
 
 
@@ -11,7 +12,8 @@ serverAdapter.setBasePath('/ui');
 
 createBullBoard({
     queues: [
-        new BullMQAdapter(sampleQueue)
+        new BullMQAdapter(sampleQueue),
+        new BullMQAdapter(submissionQueue)
     ],
     serverAdapter,
 });
